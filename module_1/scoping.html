@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // this will not yell at you for creating the same variable name twice 
+
+    //  var width = 100;
+    //  console.log(width)
+
+    //  var width = 200; 
+    //  console.log(width)
+
+     // scoping means where are these variables available to me. Var variables are functional scope. They are only availabe within the function that they are created, 
+     // or if they are not created within a function they are available globally, on the window.
+
+    //below var with will throw an error. THe curly brackets hold the variable inside of them. Like function jail. 
+     function setWidth (){
+     var width = 100
+      console.log(width)
+     }
+    setWidth()
+     console.log(width)
+
+
+     // example of scoping problem 
+    // the dogyears variable was created in order to act as a container for the dogyears. But, because 
+    // it isn't inside of a function it is available globally 
+     var age = 100;
+     if (age > 12){
+         var dogyears = age * 7; 
+         console.log(`you are ${dogyears}dog years old`)
+     }
+
+// the above is a great example of when to use "let" instead of "var". Let is block scoped.
+//what is block scoping? anytime you see an opening and closing curly bracket that is a block. 
+// let is only available in a block scope. 
+
+// you can also use const above because it is also block scoped. 
+     let height = 200;
+     const key= 'abc123'   
+  </script>
+
+
+
+
+</body>
+</html>
