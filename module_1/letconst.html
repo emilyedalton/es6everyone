@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // key difference between "let" and "const"is that let variables
+    // are made to be updated and const variables cannot be updated
+       const key = "abc123" 
+       let points = 50;
+       let winner = false
+// if you console log "winner" the result will be false because
+// the second winner is a different variable that is scoped within a block 
+    if (points > 40){
+        console.log ("this works")
+        let winner = true
+    }
+console.log (winner)
+    </script>
+</body>
+</html>
