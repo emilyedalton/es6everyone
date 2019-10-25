@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //Immediately invoked functions run themselves immediately, and they
+      //create a scope for a variable. Before let and const this was the only way 
+      // to make sure your variable did not get overwritten
+
+// (function(){
+// var name = "larry"
+// console.log(name)
+// })();
+{
+    const name = "sue"
+    console.log(name)
+}
+// let and const will fix a for loop 
+for (var i=0; i < 10; i++){
+// console.log(i)
+// above will log 1-10
+setTimeout(function(){
+    console.log('the number is ' + i);
+}, 10000)
+      }
+// in the ammmount of time it takes to run the for loop will have already run and the function will
+//log "10" because the variable will have been overwritten
+
+// if you use let it will work because the variable is block scoped, const will not work
+//because it will reassign itself
+    </script>
+</body>
+</html>
