@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to Arrow functions</title>
+</head>
+<body>
+   <h1>All the good stuff is in the console</h1> 
+</body>
+<script>
+//aarow functions have a few advantages 
+// more concise 
+//implicit returns 
+//does not rebind the value of "this"
+
+//going to use a function to add a last name string to the pharase below
+const names = ['larry', 'joe', 'jack']
+const name = "when no one is around, say baby I love you"
+// using map with a regular function 
+
+const fullnames=names.map(function(name){
+return `my name is ${name}`
+
+})
+console.log(fullnames)
+
+//rewritten as an arrow function 
+// also note that you do not need to enclose the argument in parens if there is 
+// only one agrument
+const fullnames2 = names.map(name =>{
+    return `my name is ${name} !`
+
+
+})
+console.log(fullnames2)
+
+// aarow functions don't need to have return written
+// put the return and the function all up on one line with the function and delete the 
+// curly brackets; if you do not delete the curly brackets you get undefined. 
+const fullnames3 = names.map(name =>`my name is ${name} ! I mean it this time. `)
+console.log(fullnames3)
+
+
+// if you have no arguments at all you need to pass an empty paren
+
+const fullnames4 = names.map(()=>`I mean it this time. `)
+console.log(fullnames4)
+
+//aarow functions are always anonomys functions
+
+// what is a named function? A named function is written with the word "function"
+
+function sayMyName(name){
+
+console.log(name)
+}
+sayMyName(name)
+
+// if you use an arrow function you cannot name them
+
+const sayMyName2 = (name)=>{console.log(name)}
+sayMyName2("Beyonce")
+
+// More aarow function examples!!!
+
+const race = "100m dash"
+
+const winners = ["joe", "dude", "some lady"]
+// a better way to indicate the above is to return an object
+// pass in two arguments-- the winner and the index
+// without paranthesis around the object, it throws an error. But how to 
+// make an implicit return that is an object without curly brackes? 
+//ANSWER: put them in parenthesis 
+const win = winners.map((winner, i ) =>({name: winner, race: race, place: i + 1}))
+
+const ages = [22,45,456,2, 63]
+
+const old = ages.filter(age => age >= 45)
+console.log(old)
+</script>
+
+</html>
