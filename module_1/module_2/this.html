@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to Arrow functions</title>
+</head>
+<body>
+   <h1>All the good stuff is in the console</h1> 
+   <button class="btn">click me to find out what this is </button>
+</body>
+<script>
+const button = document.querySelector('.btn')
+
+button.addEventListener("click", function(){
+    alert(this)
+    //this refers to the variable that got called on 
+    setTimeout (()=>{
+        //this value will be inherited from the parent scope
+       document.write(this) 
+    }, 5000)
+})
+</script>
+
+</html>
