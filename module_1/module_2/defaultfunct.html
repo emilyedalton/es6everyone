@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //making a tip calculator in JS w/ default functions
+// function calculate(total, tax, tip){
+
+//     return total + (total * tax) + (total * tip);
+// }
+// this will work, but only if you pass all three arguments, 
+//if you're missing one or two the function will be NaN because
+// it is trying to do math with undefined values
+// const totalBill = calculate(100, 0.11, 0.15)
+
+function calculate(total, tax=0.11, tip=0.25){
+
+return total + (total * tax) + (total * tip);
+}
+const totalBill = calculate(100)
+//result using default function values
+console.log(totalBill)
+    </script>
+</body>
+</html>
