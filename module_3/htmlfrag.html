@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const beer = { 
+            name: 'Belgian Wit',
+            brewery: 'Temperance',
+            keywords: ['sweet', 'wheat', 'boozy']
+        }
+        const person = { 
+            name: "emily",
+            job: "stupid stuff",
+            city: 'chicago',
+            bio: 'great lakes, great times'
+
+        }
+        const cats = [
+            {name: "tina", age: 1},
+            {name: "joey", age: 4},
+            {name: "mister b", age: 14},
+
+
+        ]
+        const song = {
+            name: 'Dying to live',
+            artist: "tupac",
+            featuing: 'biggie smalls'
+        }
+        // you can put markup right into a template literal 
+        const markup1 = `<div class = "person"> 
+            <h2>${person.name}</h2>
+            <span class= "job"> ${person.job} </span>
+            <p class = bio>${person.bio} </>
+            </div>`
+        // document.body.innerHTML = markup1
+
+        // you can next template strings inside of each other 
+        const markup2 = ` 
+        <ul class = "cats">
+            ${cats.map(cat => `<li>${cat.name} is pretty and is ${cat.age} years old</li>`).join('')}`
+        // document.body.innerHTML = markup2
+
+const markup3= `<div class = "song">
+    <p> ${song.name}: ${song.artist}
+        ${song.featuing ? `(Feat. ${song.featuing})`: ""}</p></div>`
+        // document.body.innerHTML = markup3
+        // you can run a function inside of a template string to handle data 
+        //reminisicient of react be
+function renderkeywords(keywords){
+    return `<ul> ${keywords.map(keyword => `<li>${keyword}</li>`).join('')}
+    </ul>`
+}
+const markup4 = `<div class = "beer"> 
+            <h2>${beer.name}</h2>
+            <span class= "job"> ${beer.brewery} </span>
+    ${renderkeywords(beer.keywords)} </>
+            </div>`
+        document.body.innerHTML = markup4
+
+        </script>
+</body>
+</html>
